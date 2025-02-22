@@ -19,6 +19,9 @@ namespace ProjectManagementApp.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ProjectManager>()
+                .HasKey(pm => pm.Id); // Explicitly setting the primary key for the ProjectManager entity. This is because of the error message regarding the primary key not being set. Should hopefully fix the issue and make the migration work?
+
             modelBuilder.Entity<Project>()
                 .HasOne(p => p.Customer)
                 .WithMany()
