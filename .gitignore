@@ -1,0 +1,56 @@
+# Visual Studio och .NET
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+*.csproj.user
+*.dbmdl
+*.log
+*.vs/
+Backup*/
+TestResults/
+DumpStack.log
+*.pdb
+
+# ASP.NET Core-specifika
+appsettings.json
+appsettings.*.json
+secrets.json
+logs/
+wwwroot/
+node_modules/
+
+# EF Core-migrations & databaser
+Migrations/
+*.mdf
+*.ldf
+*.sqlite
+*.db
+*.bak
+Database/
+
+# React (Vite) frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Paket-hantering
+*.npmrc
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Operating System-filer
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE- och editor-specifika filer
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+*.vscode/
