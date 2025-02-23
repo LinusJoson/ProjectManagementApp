@@ -1,37 +1,31 @@
 
-* API (Presentation) 
+This version is currently(as of 2025-02-23) in development and is not yet ready for final release/use.
+
+The current version is a simple project management application that is intended to allow users to create, read, update and delete projects and customers.
+This is intended to be handled in a database and the current version uses Entity Framework Core to interact with a LocalDB database.
+
+The current version has an API that allows users to interact with the database and is intended to be used by a front-end application created in React/Vite.
+The Front-end application is not yet created.
+
+What is included in the current version:
+
+* Api (Presentation)
 - WebApi
-- Controllers/ som tar emot http-anrop och hanterar API-logik. (ProjectController.cs + CustomerController.cs)
-- appsettings.json (konfigurationsfil)
-- Program.cs (startar applikationen)
-- ProjectManagementApp.API.http (testfil för att testa API:et)
+- Controllers/ that receive http requests and handle API logic. (ProjectController.cs + CustomerController.cs)
+- appsettings.json (configuration file)
+- Program.cs (starts the application)
+- ProjectManagementApp.API.http (test file to test the API)
 
 * Core (Domain layer)
-- Entities/ som innehåller domänmodeller (Project.cs + Customer.cs + ProjectManager.cs + ServiceType.cs)
-- Interfaces/ som innehåller gränssnitt (ICustomerService.cs + IProjectService.cs)
+- Entities/ that contain domain models (Project.cs + Customer.cs + ProjectManager.cs + ServiceType.cs)
+- Interfaces/ that contain interfaces (ICustomerService.cs + IProjectService.cs)
 
 * Infrastructure (Data Access Layer)
-- Services/ som innehåller tjänster för att hantera data (CustomerService.cs + ProjectService.cs)
-- Repositories/ som innehåller repositories för att hantera data (CustomerRepository.cs + ProjectRepository.cs)
+- Services/ that contain services to handle data (CustomerService.cs + ProjectService.cs)
+- Repositories/ that contain repositories to handle data (CustomerRepository.cs + ProjectRepository.cs)
 
+---
+What is planned for the upcoming version:
 
-Viktigt att tänka på!!:
-
-När Migrations ska köras så behöver det i nuläget köras från solution-mappen och ange 
-API-projektet som startprojekt i PowerShell. Detta för att migrationsverktyget ska hitta databasen!
-appsettings.json finns i API-projektet och det är där connectionstringen finns.
-
-Enligt följande alltså:
-dotnet ef migrations add InitialCreate --project ProjectManagementApp.Infrastructure --startup-project ProjectManagementApp.API
-
-Infrastructure har ingen appsettings.json, så migration hittar inte databasen
-Kanske går att fixa genom att ha API som StartUp-Project som standard? 
-
-API:
-Har följande filer: 
-- appsettings.json
-- Program.cs
-
-Infrastructure:
-
-Core:
+* Front-end application (React/Vite)
+- Create a front-end application that allows users to interact with the database and display the data in a user-friendly way.
